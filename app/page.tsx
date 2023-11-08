@@ -75,7 +75,7 @@ export default function Home() {
         <CardFooter className="flex justify-between">
           <Button variant="outline">Cancel</Button>
 
-          <Dialog>
+          <Dialog aria-label="confirm-dialog">
             <DialogTrigger asChild>
               <Button variant="default" disabled={!name || !framework}>
                 Create
@@ -87,9 +87,8 @@ export default function Home() {
               </DialogHeader>
               <div className="grid gap-2 py-4">
                 <DialogDescription>
-                  You’re about to create the project{" "}
-                  <span className="font-semibold">{name}</span> using the{" "}
-                  <span className="font-semibold">{framework}</span> framework.
+                  You’re about to create the project <span>{name}</span> using
+                  the <span>{framework}</span> framework.
                 </DialogDescription>
                 <DialogDescription>
                   Please confirm to proceed with the setup.

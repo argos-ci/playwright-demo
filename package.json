@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "npx playwright test"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
@@ -28,6 +29,8 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@argos-ci/playwright": "^1.2.1",
+    "@playwright/test": "^1.39.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
