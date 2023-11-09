@@ -30,6 +30,15 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
+const frameworks = {
+  next: "Next.js",
+  sveltekit: "SvelteKit",
+  astro: "Astro",
+  nuxt: "Nuxt.js",
+}
+
+type Framework = keyof typeof frameworks
+
 export default function Home() {
   const [name, setName] = React.useState<string>("")
   const [framework, setFramework] = React.useState<string>("")
@@ -62,10 +71,11 @@ export default function Home() {
                     <SelectValue placeholder="Select" />
                   </SelectTrigger>
                   <SelectContent position="popper">
-                    <SelectItem value="next">Next.js</SelectItem>
-                    <SelectItem value="sveltekit">SvelteKit</SelectItem>
-                    <SelectItem value="astro">Astro</SelectItem>
-                    <SelectItem value="nuxt">Nuxt.js</SelectItem>
+                    {Object.entries(frameworks).map(([key, label]) => (
+                      <SelectItem key={key} value={key}>
+                        {label}
+                      </SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
               </div>
@@ -87,8 +97,8 @@ export default function Home() {
               </DialogHeader>
               <div className="grid gap-2 py-4">
                 <DialogDescription>
-                  You’re about to create the project <span>{name}</span> using
-                  the <span>{framework}</span> framework.
+                  You’re about to create the project {name} using the{" "}
+                  {frameworks[framework as Framework]} framework.
                 </DialogDescription>
                 <DialogDescription>
                   Please confirm to proceed with the setup.
