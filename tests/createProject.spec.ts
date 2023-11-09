@@ -12,7 +12,7 @@ test("create project", async ({ page }) => {
 
   await page.getByRole("button", { name: "Create" }).click()
   await expect(page.getByRole("dialog")).toHaveText(
-    /You’re about to create the project sephora using the nuxt framework./i
+    "You’re about to create the project sephora using the Nuxt framework."
   )
   await argosScreenshot(page, "Confirm modal")
 })
