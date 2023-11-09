@@ -23,8 +23,12 @@ jobs:
           node-version: "latest"
           cache: pnpm
 
+      - name: Install dependencies
+        shell: bash
+        run: pnpm install --frozen-lockfile
+
       - name: Build project
-        run: pnpm build
+        run: pnpm run build
 
       - name: Install Chromium
         run: pnpm exec playwright install chromium --with-deps
