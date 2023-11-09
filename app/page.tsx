@@ -34,7 +34,7 @@ const frameworks = {
   next: "Next.js",
   sveltekit: "SvelteKit",
   astro: "Astro",
-  nuxt: "Nuxt.js",
+  nuxt: "Nuxt",
 }
 
 type Framework = keyof typeof frameworks
