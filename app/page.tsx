@@ -97,8 +97,8 @@ export default function Home() {
               </DialogHeader>
               <div className="grid gap-2 py-4">
                 <DialogDescription>
-                  You’re about to create the project {name} using the{" "}
-                  {frameworks[framework as Framework]} framework.
+                  You’re about to create the project {name} using{" "}
+                  {frameworks[framework as Framework]}.
                 </DialogDescription>
                 <DialogDescription>
                   Please confirm to proceed with the setup.
